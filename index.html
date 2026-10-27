@@ -6,56 +6,159 @@
     <title>MaycombHQ</title>
     <meta
       name="description"
-      content="MaycombHQ makes open-source tools for software teams. Its first project is Atticus."
+      content="MaycombHQ makes open-source tools for software teams that show their work. Its first project is Atticus."
+    />
+    <meta property="og:title" content="MaycombHQ" />
+    <meta
+      property="og:description"
+      content="Open-source tools that show their work. First project: Atticus."
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      href="/fonts/ibm-plex-sans-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/ibm-plex-sans-latin-600-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/jetbrains-mono-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <script>
       // The Atticus site (/atticus/) remembers its theme switch on this origin; follow it here.
       try {
         var theme = localStorage.getItem("vitepress-theme-appearance");
-        if (theme === "dark" || theme === "light") document.documentElement.classList.add(theme);
+        if (theme === "dark" || theme === "light")
+          document.documentElement.classList.add(theme);
       } catch (e) {}
     </script>
     <link rel="stylesheet" href="/site.css" />
   </head>
   <body>
     <div class="page">
+      <!-- The masthead is set as the first lines of a source file: the house idea is that a claim
+           names the line it comes from. -->
       <header class="masthead">
-        <h1>MaycombHQ</h1>
-        <p>Open-source tools for software teams.</p>
+        <ol class="source" aria-label="MaycombHQ">
+          <li class="l-name"><h1>MaycombHQ</h1></li>
+          <li class="l-claim">
+            <p>Open-source tools that show their work.</p>
+          </li>
+          <li class="l-detail">
+            <p>
+              Every claim cites the line it came from, and a person makes the
+              call.
+            </p>
+          </li>
+        </ol>
       </header>
 
       <main class="projects" aria-labelledby="projects-title">
         <h2 id="projects-title">Projects</h2>
-        <ul>
-          <li class="project">
-            <svg class="mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <g fill="none" stroke="currentColor" stroke-linecap="round">
-                <g stroke-width="1.1">
-                  <circle cx="6.5" cy="12.4" r="4.5" />
-                  <circle cx="17.5" cy="12.4" r="4.5" />
-                  <path d="M11 11.4 H13" />
+
+        <article class="project">
+          <div class="about">
+            <div class="title">
+              <svg
+                class="mark"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <g fill="none" stroke="currentColor" stroke-linecap="round">
+                  <g stroke-width="1.1">
+                    <circle cx="6.5" cy="12.4" r="4.5" />
+                    <circle cx="17.5" cy="12.4" r="4.5" />
+                    <path d="M11 11.4 H13" />
+                  </g>
+                  <path
+                    stroke-width="1"
+                    d="M3.7 11.3 Q3.9 10.0 5.2 9.6 M20.3 11.3 Q20.1 10.0 18.8 9.6"
+                  />
                 </g>
-                <path stroke-width="1" d="M3.7 11.3 Q3.9 10.0 5.2 9.6 M20.3 11.3 Q20.1 10.0 18.8 9.6" />
-              </g>
-            </svg>
-            <h3><a href="/atticus/">Atticus</a></h3>
+              </svg>
+              <h3><a href="/atticus/">Atticus</a></h3>
+            </div>
             <p>
-              Your AI assistant reads your repos; Atticus checks every fact it writes against the line
-              it cites, then runs each change from idea to tasks with a critic and a person's approval.
+              Your AI assistant reads your repos. Atticus checks every fact it
+              writes against the line it cites, then runs each change from idea
+              to stories and tasks, with a critic that argues the other side and
+              a person's approval at every gate.
+            </p>
+            <p>
+              Built on OpenSpec, for teams whose systems span many repositories.
             </p>
             <p class="links">
-              <a href="/atticus/guide/install.html">Install it</a>
-              <a href="https://github.com/maycombhq/atticus">Source on GitHub</a>
+              <a class="primary" href="/atticus/guide/install.html"
+                >Install Atticus</a
+              >
+              <a href="/atticus/">Read the docs</a>
+              <a href="https://github.com/maycombhq/atticus"
+                >Source on GitHub</a
+              >
             </p>
-          </li>
-        </ul>
+          </div>
+
+          <figure class="demo">
+            <figcaption>
+              <span class="file">forge-ledger/…/NorthwindClient.java</span>
+            </figcaption>
+            <div
+              class="code"
+              role="img"
+              aria-label="Five lines of Java. An assistant claimed line 8 calls POST /v2/payouts; line 8 says /v2/payments, so the claim is rejected. Its claim that line 11 calls POST /v2/refunds holds, so it is kept."
+            >
+              <div class="row">
+                <span class="n">8</span
+                ><code>@ForgeCall(method = "POST", path = "/v2/payments")</code>
+              </div>
+              <div class="row">
+                <span class="n">9</span
+                ><code>PaymentResult pay(PaymentRequest request);</code>
+              </div>
+              <div class="row"><span class="n">10</span><code></code></div>
+              <div class="row">
+                <span class="n">11</span
+                ><code>@ForgeCall(method = "POST", path = "/v2/refunds")</code>
+              </div>
+              <div class="row">
+                <span class="n">12</span
+                ><code>RefundResult refund(RefundRequest request);</code>
+              </div>
+              <span class="cursor" aria-hidden="true"></span>
+            </div>
+            <ul class="verdicts" aria-hidden="true">
+              <li class="no">
+                <b>Rejected</b> “POST /v2/payouts, line 8”: line 8 says
+                /v2/payments.
+              </li>
+              <li class="ok">
+                <b>Kept</b> “POST /v2/refunds, line 11”: the quote matches.
+              </li>
+            </ul>
+          </figure>
+        </article>
       </main>
 
       <footer class="foot">
-        <p><a href="https://github.com/maycombhq">MaycombHQ on GitHub</a></p>
+        <p>
+          <a href="https://github.com/maycombhq">MaycombHQ on GitHub</a>
+          <span
+            >The code above is from the invented Forge estate in Atticus's test
+            fixtures.</span
+          >
+        </p>
       </footer>
     </div>
   </body>
