@@ -1,0 +1,217 @@
+/* MaycombHQ: the same tokens as the Atticus site (maycombhq.com/atticus), so the two read as one
+   place. Light by default, dark when the system asks, and whichever the Atticus site's theme
+   switch was last set to (it shares this origin; see the script in each page's head). Every text
+   colour keeps 4.5:1 on its ground in both themes. */
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light;
+  --ink: #f5f8fa;
+  --panel: #ffffff;
+  --line: #d3dde4;
+  --text: #13202a;
+  --muted: #4a5d6c;
+  --cite: #006872;
+  --cite-strong: #00525a;
+}
+:root.dark {
+  color-scheme: dark;
+  --ink: #0e1820;
+  --panel: #13212b;
+  --line: #253642;
+  --text: #e3edf2;
+  --muted: #a3b5c2;
+  --cite: #5ce1ee;
+  --cite-strong: #9ff0f7;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --ink: #0e1820;
+    --panel: #13212b;
+    --line: #253642;
+    --text: #e3edf2;
+    --muted: #a3b5c2;
+    --cite: #5ce1ee;
+    --cite-strong: #9ff0f7;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+a {
+  color: var(--cite);
+  text-underline-offset: 3px;
+}
+a:hover {
+  color: var(--cite-strong);
+}
+:focus-visible {
+  outline: 2px solid var(--cite);
+  outline-offset: 3px;
+}
+
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 72px 24px 64px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 640px) {
+  .page {
+    padding: 40px 16px;
+  }
+}
+
+.masthead h1,
+.lost h1 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1;
+}
+.masthead h1 {
+  font-size: clamp(2.75rem, 1.6rem + 5vw, 4.5rem);
+  letter-spacing: -0.035em;
+}
+.masthead p {
+  margin: 20px 0 0;
+  max-width: 46ch;
+  font-size: 1.1875rem;
+  color: var(--muted);
+}
+
+.projects {
+  margin: 64px 0 0;
+}
+.projects h2 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.projects ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 24px;
+}
+
+/* A project's entry, in the corner brackets the Atticus app uses for what has been checked. */
+.project {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 20px;
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+.project::before,
+.project::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 0 solid var(--cite);
+  pointer-events: none;
+}
+.project::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+.project::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+}
+.project .mark {
+  grid-row: span 3;
+  width: 48px;
+  height: 48px;
+  color: var(--cite);
+}
+.project h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.project h3 a {
+  color: var(--text);
+  text-decoration-color: var(--cite);
+}
+.project h3 a:hover {
+  color: var(--cite-strong);
+}
+.project p {
+  margin: 0;
+  max-width: 60ch;
+}
+.project .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  font-size: 0.9375rem;
+}
+@media (max-width: 480px) {
+  .project {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .project .mark {
+    grid-row: auto;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.foot {
+  margin-top: auto;
+  padding-top: 64px;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+.foot p {
+  margin: 0;
+}
+
+.lost h1 {
+  font-size: clamp(2rem, 1.4rem + 3vw, 3rem);
+  letter-spacing: -0.02em;
+}
+.lost p {
+  margin: 16px 0 0;
+  max-width: 52ch;
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MaycombHQ</title>
+    <meta
+      name="description"
+      content="MaycombHQ makes open-source tools for software teams. Its first project is Atticus."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      // The Atticus site (/atticus/) remembers its theme switch on this origin; follow it here.
+      try {
+        var theme = localStorage.getItem("vitepress-theme-appearance");
+        if (theme === "dark" || theme === "light") document.documentElement.classList.add(theme);
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="/site.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="masthead">
+        <h1>MaycombHQ</h1>
+        <p>Open-source tools for software teams.</p>
+      </header>
+
+      <main class="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+        <ul>
+          <li class="project">
+            <svg class="mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <g fill="none" stroke="currentColor" stroke-linecap="round">
+                <g stroke-width="1.1">
+                  <circle cx="6.5" cy="12.4" r="4.5" />
+                  <circle cx="17.5" cy="12.4" r="4.5" />
+                  <path d="M11 11.4 H13" />
+                </g>
+                <path stroke-width="1" d="M3.7 11.3 Q3.9 10.0 5.2 9.6 M20.3 11.3 Q20.1 10.0 18.8 9.6" />
+              </g>
+            </svg>
+            <h3><a href="/atticus/">Atticus</a></h3>
+            <p>
+              Your AI assistant reads your repos; Atticus checks every fact it writes against the line
+              it cites, then runs each change from idea to tasks with a critic and a person's approval.
+            </p>
+            <p class="links">
+              <a href="/atticus/guide/install.html">Install it</a>
+              <a href="https://github.com/maycombhq/atticus">Source on GitHub</a>
+            </p>
+          </li>
+        </ul>
+      </main>
+
+      <footer class="foot">
+        <p><a href="https://github.com/maycombhq">MaycombHQ on GitHub</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
