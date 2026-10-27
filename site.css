@@ -332,6 +332,15 @@ a:hover {
   gap: 14px;
   margin-bottom: 14px;
 }
+.project .badge {
+  padding: 2px 9px;
+  border: 1px solid var(--cite);
+  border-radius: 999px;
+  color: var(--cite);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
 .project .mark {
   width: 44px;
   height: 44px;
