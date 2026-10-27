@@ -62,6 +62,85 @@
             </p>
           </li>
         </ol>
+        <svg
+          class="art"
+          viewBox="0 0 470 400"
+          role="img"
+          aria-labelledby="art-title"
+        >
+          <title id="art-title">
+            A stack of source files; one line on the front file is marked as
+            cited, and a thread runs from it to one system on a small map of
+            connected systems.
+          </title>
+          <!-- the files behind: only their tops show -->
+          <rect class="card back2" x="164" y="22" width="232" height="262" />
+          <rect
+            class="bar faint"
+            x="196"
+            y="44"
+            width="120"
+            height="6"
+            rx="3"
+          />
+          <rect class="bar faint" x="210" y="62" width="84" height="6" rx="3" />
+          <rect class="card back1" x="126" y="50" width="232" height="270" />
+          <rect
+            class="bar faint"
+            x="158"
+            y="72"
+            width="140"
+            height="6"
+            rx="3"
+          />
+          <rect class="bar faint" x="172" y="90" width="96" height="6" rx="3" />
+          <!-- the front file -->
+          <rect class="card" x="88" y="80" width="232" height="282" />
+          <line class="gutter" x1="122" y1="90" x2="122" y2="352" />
+          <rect class="cited-wash" x="89" y="194" width="230" height="24" />
+          <rect class="cited-edge" x="89" y="194" width="3" height="24" />
+          <path class="bracket" d="M85 202 V191 H96 M323 210 V221 H312" />
+          <text class="num" x="118" y="114" text-anchor="end">1</text>
+          <rect class="bar" x="130" y="107" width="150" height="6" rx="3" />
+          <text class="num" x="118" y="138" text-anchor="end">2</text>
+          <rect class="bar" x="144" y="131" width="96" height="6" rx="3" />
+          <text class="num" x="118" y="162" text-anchor="end">3</text>
+          <rect class="bar" x="144" y="155" width="128" height="6" rx="3" />
+          <text class="num" x="118" y="186" text-anchor="end">4</text>
+          <text class="num" x="118" y="210" text-anchor="end">5</text>
+          <rect
+            class="bar cited-bar"
+            x="144"
+            y="203"
+            width="138"
+            height="6"
+            rx="3"
+          />
+          <text class="num" x="118" y="234" text-anchor="end">6</text>
+          <rect class="bar" x="158" y="227" width="104" height="6" rx="3" />
+          <text class="num" x="118" y="258" text-anchor="end">7</text>
+          <rect class="bar" x="144" y="251" width="64" height="6" rx="3" />
+          <text class="num" x="118" y="282" text-anchor="end">8</text>
+          <text class="num" x="118" y="306" text-anchor="end">9</text>
+          <rect class="bar" x="130" y="299" width="118" height="6" rx="3" />
+          <!-- the thread from the cited line to what it says -->
+          <path class="thread" d="M290 206 C 350 206, 362 238, 382 262" />
+          <!-- the map -->
+          <g class="map">
+            <path
+              class="edge"
+              d="M388 270 L446 318 M388 270 L404 362 M446 318 L404 362 M388 270 L452 214 M452 214 L446 318 M452 214 L430 150 M446 318 L460 374 M404 362 L340 384"
+            />
+            <circle class="node" cx="430" cy="150" r="5" />
+            <circle class="node" cx="460" cy="374" r="5" />
+            <circle class="node" cx="340" cy="384" r="5" />
+            <circle class="node" cx="452" cy="214" r="6" />
+            <circle class="node" cx="446" cy="318" r="6" />
+            <circle class="node" cx="404" cy="362" r="6" />
+            <circle class="node cited" cx="388" cy="270" r="8" />
+            <circle class="ring" cx="388" cy="270" r="14" />
+          </g>
+        </svg>
       </header>
 
       <main class="projects" aria-labelledby="projects-title">

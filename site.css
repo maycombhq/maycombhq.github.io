@@ -138,6 +138,90 @@ a:hover {
   line-height: 1;
 }
 
+.masthead {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+}
+
+/* The artwork: files, one line cited, a thread to the map it builds. Drawn in the page's own
+   colours so it follows the theme. */
+.art {
+  width: 100%;
+  height: auto;
+  max-width: 470px;
+  justify-self: end;
+  overflow: visible;
+}
+.art .card {
+  fill: var(--panel);
+  stroke: var(--line);
+}
+.art .back1 {
+  opacity: 0.85;
+}
+.art .back2 {
+  opacity: 0.6;
+}
+.art .gutter,
+.art .edge {
+  stroke: var(--line);
+  stroke-width: 1.2;
+  fill: none;
+}
+.art .num {
+  font: 400 10px var(--mono);
+  fill: var(--muted);
+}
+.art .bar {
+  fill: var(--line);
+}
+.art .bar.faint {
+  opacity: 0.9;
+}
+.art .cited-wash {
+  fill: var(--cite-wash);
+}
+.art .cited-edge,
+.art .cited-bar,
+.art .node.cited {
+  fill: var(--cite);
+}
+.art .bracket,
+.art .thread,
+.art .ring {
+  fill: none;
+  stroke: var(--cite);
+  stroke-width: 2;
+}
+.art .thread {
+  stroke-width: 1.5;
+  stroke-dasharray: 4 5;
+}
+.art .ring {
+  stroke-width: 1.2;
+  opacity: 0.6;
+}
+.art .node {
+  fill: var(--panel);
+  stroke: var(--muted);
+  stroke-width: 1.4;
+}
+.art .node.cited {
+  stroke: var(--cite);
+}
+@media (max-width: 760px) {
+  .masthead {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .art {
+    justify-self: start;
+    max-width: 340px;
+    margin-left: var(--gutter);
+  }
+}
+
 /* The masthead as the first three lines of a file, numbered in a gutter. */
 .source {
   list-style: none;
@@ -173,7 +257,7 @@ a:hover {
   top: calc(0.5em + 0.4rem);
 }
 .source .l-name h1 {
-  font-size: clamp(3.25rem, 1.2rem + 8.5vw, 7.25rem);
+  font-size: clamp(3rem, 1.4rem + 6vw, 6rem);
   letter-spacing: -0.045em;
   padding: 0.04em 0 0.12em;
 }
@@ -190,7 +274,7 @@ a:hover {
   line-height: 1.3;
   font-weight: 600;
   letter-spacing: -0.015em;
-  max-width: 32ch;
+  max-width: 22em;
 }
 .source .l-detail {
   margin-top: 12px;
