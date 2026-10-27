@@ -358,7 +358,15 @@ a:hover {
   margin: 0 0 12px;
   max-width: 54ch;
 }
-.project .about p + p {
+.project .about .pitch {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  max-width: 30ch;
+  margin-bottom: 14px;
+}
+.project .about p:not(.pitch):not(.links) + p:not(.links) {
   color: var(--muted);
 }
 .project .links {
